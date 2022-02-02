@@ -31,7 +31,6 @@ func NewRawX12FileReader(inFile io.Reader) (*rawX12FileReader, error) {
 	//buffer := bytes.NewBuffer(make([]byte, 0))
 	first, err := r.reader.Peek(isaLength)
 	if err != nil {
-		log.Fatal(err)
 		return nil, err
 	}
 	isa := string(first)
